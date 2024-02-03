@@ -1,0 +1,26 @@
+<%- include('includes/header') -%>
+
+<div class="mdl-cell mdl-cell--12-col blog-header">
+  <h1>: : Blog : .</h1>
+</div>
+
+<article id="single-post" class="article mdl-shadow--4dp" data-row="<%= JSON.stringify(body) %>">
+</article>
+<br><br>
+<a href="/blog">
+  <button id="article-return" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <i class="material-icons">navigate_before</i>
+  </button>
+  <span class="mdl-tooltip" for="article-return">Retornar ao blog</span>
+</a>
+<br><br><br><br>
+
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/editorController.js" type="module"></script>
+<script src="/js/highlight/highlight.min.js"></script>
+<script src="/js/highlight/high.js"></script>
+<script src="/js/blogController.js" type="module"></script>
+<script src="/js/post.js" type="module"></script>

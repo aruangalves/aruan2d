@@ -1,0 +1,10 @@
+.article-reference-link{    
+    vertical-align: super;
+    font-size: smaller;    
+}
+.article-reference-link:before{
+    content: "[";
+}
+.article-reference-link:after{    
+    content: "]";    
+}

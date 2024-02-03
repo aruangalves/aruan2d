@@ -1,0 +1,22 @@
+{
+  "name": "aruan2d",
+  "version": "1.0.2",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "connect-mongodb-session": "^3.1.1",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "fast-folder-size": "^1.7.1",
+    "formidable": "^2.0.1",
+    "helmet": "^5.0.2",
+    "http-errors": "~1.6.3",
+    "mongodb": "^4.4.0",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.1"
+  }
+}

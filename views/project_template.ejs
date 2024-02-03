@@ -1,0 +1,101 @@
+<%- include('includes/header') -%>
+
+<br>
+
+<div class="mdl-cell mdl-cell--12-col">        
+  
+
+
+  <h1>: : Dev : .</h1>          
+  <br>
+</div>
+
+<div class="dev-project mdl-shadow--4dp">
+  <div class="dev-project-header" style="background-image: url(/upload/images/post-test2.jpg)">
+    <!--<img src="upload/images/post-test2.jpg" alt="">-->
+    <div class="dev-project-header-container">
+       <h1 class="article-cover-title" id="dev-project-title">Título do projeto</h1>                  
+       <p class="article-cover-date" id="dev-project-date">Última modificação: 17 de fevereiro de 2021 | Data de criação: 10 de janeiro de 2020</p>
+       
+    </div>
+  </div>
+  <div style="margin-bottom: 0.4rem; display: inline-block; width: 10%; height: 0.4rem; background-color: var(--red);"></div><div style="display: inline-block; width: 90%; height: 0.4rem; background-color: var(--darkgray); margin-bottom: 0.4rem;"></div>
+  <div class="dev-project-body">
+    <div class="dev-project-content">
+      <h3>Visão geral</h3>
+      <div id="dev-project-overview"></div>
+      <hr>
+      <p>Texto de exemplos</p>
+      <h4>Navegação</h4>
+      <div class="expandablemenu">
+        <div class="expandable-header"><p class="expandable-title">Clique para <span class="expandable-action">ampliar</span></p>
+          <i class="material-icons expandable-button">add</i></div>
+        <div class="expandable-content hide">
+          <ul>
+            <li><a href="#project-intro">Introdução</a></li>
+            <li><a href="#project-manual">Manual</a></li>
+            <li><a href="#project-res">Recursos</a></li>
+            <li><a href="#project-changelog">Changelog</a></li>                
+          </ul> 
+        </div>                
+      </div>                         
+    </div>
+    <aside class="dev-project-aside">
+      <div class="dev-project-aside-top">
+        <span class="material-icons">rule</span>
+        <h6>Status do projeto</h6>
+      </div>
+      <span id="dev-project-status">Concluído</span>
+      <div class="dev-project-aside-mid">
+        <span class="material-icons">done</span>
+        <h6>Versão atual</h6>
+      </div>
+      <span id="dev-project-version">1.0</span>
+      <div class="dev-project-aside-mid">
+        <span class="material-icons">link</span>
+        <h6>Link do projeto</h6>
+      </div>              
+      <span id="dev-project-link">Site</span>
+      <div class="dev-project-aside-mid">
+        <span class="material-icons">share</span>
+        <h6>Repositório</h6>
+      </div>
+      <span id="dev-project-repo">Repositório</span>
+      <div class="dev-project-aside-mid">
+        <span class="material-icons">copyright</span>
+        <h6>Licença</h6>
+      </div>
+      <span id="dev-project-license">Free</span>
+    </aside>
+    <div class="dev-project-content-full">
+      <h3 id="project-intro">Introdução</h3>
+      <div id="dev-project-intro"></div>
+      <hr>
+      <h3 id="project-manual">Manual</h3>
+      <div id="dev-project-manual"></div>
+      <hr>
+      <h3 id="project-res">Recursos</h3>
+      <div id="dev-project-resources"></div>
+      <hr>
+      <h3 id="project-changelog">Changelog</h3>
+      <div id="dev-project-changelog"></div>
+      <hr>
+    </div>            
+  </div>
+  
+  <div class="dev-bottom dev-bottom-left">
+    <span class="material-icons">keyboard_double_arrow_left</span>
+    Voltar à página anterior
+    
+  </div>
+</div>
+
+<div class="hide" id="dev-project-retrieve" data-row="<%= JSON.stringify(body) %>"></div>
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/editorController.js" type="module"></script>
+<script src="/js/highlight/highlight.min.js"></script>
+<script src="/js/highlight/high.js"></script>
+<script src="/js/project.js" type="module"></script>

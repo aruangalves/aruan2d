@@ -1,0 +1,107 @@
+<%- include('includes/header') -%>
+
+<article id="single-post" class="article mdl-shadow--4dp" data-row="<%= JSON.stringify(body) %>">
+
+  <figure class="article-cover" style="background-image: url(/upload/images/post-test3.jpg)">              
+    <div>
+       <h1 class="article-cover-title">Como construir um site?</h1>                  
+       <p class="article-cover-date">17 de fevereiro de 2021, às 16h14</p>
+       <hr>
+       
+    </div>
+  </figure>
+  <div class="article-header-decoration-left"></div><div class="article-header-decoration-right"></div>
+  
+  <div class="article-content">
+    <p class="article-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh ante, sed iaculis sem efficitur quis. Pellentesque sed ultrices libero. In ut ante ante. Nulla elit eros, hendrerit non ultrices nec, dignissim eget ante. Cras urna orci, sollicitudin nec posuere vel, tincidunt at nunc. Quisque congue odio in nunc semper lacinia. In mollis nunc lorem, eu dictum diam sagittis in. Ut eleifend enim hendrerit, porta nisi non, volutpat augue. Ut malesuada felis aliquam risus pulvinar pharetra. Integer faucibus porttitor lorem vel imperdiet. Maecenas nec lacinia eros. Integer rutrum tempor risus. Aenean auctor, mauris rhoncus laoreet rhoncus, nisl mauris pellentesque est, et porta arcu dui eget risus. Mauris ac nibh mattis, fringilla sem in, pellentesque odio.
+    
+      <br><br>
+      Nam vitae quam lobortis risus tristique sodales ut id lorem. Fusce vitae massa metus. Integer iaculis erat quam, eu luctus elit bibendum ac. Vivamus interdum quam gravida augue feugiat pulvinar. Etiam vitae neque ultrices, scelerisque tellus eleifend, porttitor lorem. Maecenas euismod nisl eu libero lacinia, vel pretium massa vehicula. Phasellus id blandit eros, in vestibulum nisl. Duis pretium porta pulvinar. Etiam quis urna viverra, hendrerit erat maximus, varius felis. Ut viverra congue augue, vel hendrerit sem vehicula quis. Proin congue quis lectus sed pellentesque. Donec mollis dolor ut tortor bibendum facilisis. Nunc mollis molestie nulla, quis finibus eros porttitor eget. Morbi ut justo et metus tempus hendrerit dapibus in arcu.
+      <br><br>
+      Nam quis turpis sed leo malesuada facilisis. Phasellus nec arcu eu urna scelerisque vestibulum. Phasellus ultricies lectus sit amet massa vestibulum, ac semper nunc pulvinar. Mauris lacinia lobortis lectus eget luctus. Cras posuere turpis sit amet ante scelerisque facilisis. Integer vitae turpis a erat venenatis elementum a et tortor. Integer a elementum ante. Cras non est volutpat, bibendum mi vitae, auctor magna. Morbi vel faucibus justo.
+      <br><br>
+      Curabitur lacinia augue vitae massa venenatis sodales. Mauris condimentum nisi malesuada orci auctor ultrices. Ut convallis massa id tellus porttitor, id viverra mauris lobortis. Curabitur eget sem nunc. Praesent viverra lectus dolor, id auctor tellus tristique eget. Pellentesque a dolor vel eros egestas pretium vel vitae nibh. Suspendisse urna turpis, lobortis eu velit at, fermentum pulvinar ante. Sed nec commodo eros, eget imperdiet arcu. Morbi nec mollis massa. Pellentesque mollis quam tellus, ac aliquet nibh efficitur nec.
+    </p>
+      <p class="article-quote">Citação de exemplo para verificar o comportamento das regras pré-definidas via CSS</p>
+      <p class="article-quote-author">Autor</p>
+    <p class="article-text">
+      Continuando o texto com um...
+
+      <a href="#">link de exemplo</a>.
+
+      Fim de parágrafo para observar o comportamento do elemento de hiperlink. Ele não deve quebrar uma nova linha. Curabitur lacinia augue vitae massa venenatis sodales. Mauris condimentum nisi malesuada orci auctor ultrices. Ut convallis massa id tellus porttitor, id viverra mauris lobortis. Curabitur eget sem nunc. Praesent viverra lectus dolor, id auctor tellus tristique eget. Pellentesque a dolor vel eros egestas pretium vel vitae nibh. Suspendisse urna turpis, lobortis eu velit at, fermentum pulvinar ante. Sed nec commodo eros, eget imperdiet arcu. Morbi nec mollis massa. Pellentesque mollis quam tellus, ac aliquet nibh efficitur nec.
+    </p>
+
+    <h3 class="article-header">Título de Exemplo</h3>
+      
+
+    <figure class="article-figure">
+      <img class="article-image" src="/upload/images/colorful.jpg" alt="Imagem de exemplo contendo um bloco de notas e materiais de pintura.">
+      <figcaption>
+        Imagem de exemplo contendo um bloco de notas e materiais de pintura.
+      </figcaption>
+    </figure>
+      
+      
+      <p class="article-text">
+      Este parágrafo serve para testar as referências <a class="article-reference-link" href="#ref-1" id="cite-1">1</a> <a class="article-reference-link" href="#ref-2" id="cite-2">2</a> <a class="article-reference-link" href="#ref-3" id="cite-3">3</a>.
+      Nam quis turpis sed leo malesuada facilisis. Phasellus nec arcu eu urna scelerisque vestibulum. Phasellus ultricies lectus sit amet massa vestibulum, ac semper nunc pulvinar. Mauris lacinia lobortis lectus eget luctus. Cras posuere turpis sit amet ante scelerisque facilisis. Integer vitae turpis a erat venenatis elementum a et tortor. Integer a elementum ante. Cras non est volutpat, bibendum mi vitae, auctor magna. Morbi vel faucibus justo.
+      A primeira referência é citada mais uma vez aqui <a class="article-reference-link" href="#ref-1" id="cite-4">1</a>.
+    </p>
+
+      <figure class="article-figure">
+        <img class="article-image" src="/upload/images/vertical.jpg" alt="Teste de imagem">
+        <figcaption>Teste de Imagem</figcaption>
+      </figure>
+
+      <figure class="article-figure">
+        <img class="article-image" src="/upload/images/faq_consagracao.png" alt="Consagração à Imaculada">
+        <figcaption>Consagração à Imaculada</figcaption>
+      </figure>
+    
+    <br>
+  </div>
+  <hr>
+  <ol class="article-reference">
+    
+    <li id="ref-1">Primeira referência. <a href="#cite-1" class="article-reference-link"></a> <a href="#cite-4" class="article-reference-link"></a></li>
+    <li id="ref-2">Segunda referência. <a href="#cite-2" class="article-reference-link"></a></li>
+    <li id="ref-3">Terceira referência. <a href="#cite-3" class="article-reference-link"></a></li>
+  </ol>
+
+  <hr class="article-categories">
+  <section class="article-categories">
+    <div class="article-categories">Categorias </div>
+    <ul class="article-categories">
+      <li><a href="#" class="article-tag">Teste 1</a></li>
+      <li><a href="#" class="article-tag">Teste 2</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+      <li><a href="#" class="article-tag">Teste 3</a></li>
+    </ul>
+  </section>            
+</article>
+<br><br>
+<a href="/blog">
+  <button id="article-return" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <i class="material-icons">navigate_before</i>
+  </button>
+  <span class="mdl-tooltip" for="article-return">Retornar ao blog</span>
+</a>
+<br><br><br><br>
+
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/editorController.js" type="module"></script>
+<script src="/js/highlight/highlight.min.js"></script>
+<script src="/js/highlight/high.js"></script>
+<script src="/js/blogController.js" type="module"></script>
+<script src="/js/post.js" type="module"></script>

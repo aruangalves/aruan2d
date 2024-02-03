@@ -1,0 +1,162 @@
+<%- include('includes/header') -%>
+
+<div class="mdl-cell mdl-cell--12-col">    
+  <div id="design" class="design-head">
+    <img id="design-title" src="/images/headerdesigntitle.svg">
+    <img id="design-decoration" src="/images/headerdesignitems.svg">
+  </div>
+  <div class="design-head-separator"></div>
+  <h5 class="subtitle">Todos os trabalhos desenvolvidos em design estão disponíveis aqui. Cada item está separado por categorias e organizado por data mais recente de publicação.</h5>
+  <p class="categories">
+    <strong>Categorias:</strong>
+    <a href="#logos"><button type="button" class="mdl-chip">
+        <span class="mdl-chip__text">Logos</span>
+    </button></a>
+    <a href="#grafica"><button type="button" class="mdl-chip">
+      <span class="mdl-chip__text">Gráfica</span>
+    </button></a>
+    <a href="#artes"><button type="button" class="mdl-chip">
+      <span class="mdl-chip__text">Artes</span>
+    </button></a>
+    <a href="#videos"><button type="button" class="mdl-chip">
+      <span class="mdl-chip__text">Vídeos</span>
+    </button></a>
+  </p>
+  <br>       
+</div>
+
+<div class="mdl-cell mdl-cell--12-col design-logo design-section-header-first">
+  <div id="logos" class="design-section-header-title" style="background-image: url(/images/headerlogo.svg);"></div>                                 
+  <h6 class="subtitle">Todas as logos que foram criadas e entregues. Em cada uma eu forneço um comentário a respeito do processo de criação, podendo acompanhar uma galeria de imagens com variações das logos ou com recortes das etapas de desenvolvimento.</h6>
+</div>
+
+<div id="showcase-logo" class="mdl-cell mdl-cell--12-col">
+
+</div>
+
+
+<button id="more-logo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored btn-more logoprint-btn">
+  <i class="material-icons">add</i> Carregar mais
+</button>
+<div id="spinner-logo" class="design-spinner mdl-spinner mdl-js-spinner is-active"></div>
+
+
+
+
+<div class="mdl-cell mdl-cell--12-col">  
+  <div class="design-bottom">
+    <a class="accent no-decoration design-totop" href="#design"><i class="material-icons accent">arrow_drop_up</i> Retornar ao topo</a>  
+    <hr class="design-bottom-hr">
+  </div>
+  <br><br>
+</div>
+
+<div class="mdl-cell mdl-cell--12-col design-print design-section-header">
+  <div id="grafica" class="design-section-header-title" style="background-image: url(/images/headerprint.svg);"></div>  
+  <h6 class="subtitle">Aqui você encontrará todo tipo de material gráfico produzido por mim. Isto inclui cartões de visita, cardápios, panfletos e encartes.</h6>
+</div>
+
+<div id="showcase-print" class="mdl-cell mdl-cell--12-col">
+
+</div>
+
+<button id="more-print" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored btn-more logoprint-btn">
+  <i class="material-icons">add</i> Carregar mais
+</button>
+<div id="spinner-print" class="design-spinner mdl-spinner mdl-js-spinner is-active"></div>
+
+<div class="mdl-cell mdl-cell--12-col">  
+  <div class="design-bottom">
+    <a class="accent no-decoration design-totop" href="#design"><i class="material-icons accent">arrow_drop_up</i> Retornar ao topo</a>  
+    <hr class="design-bottom-hr">
+  </div>
+  <br><br>
+</div>
+
+<div class="mdl-cell mdl-cell--12-col design-art design-section-header">  
+    <div id="artes" class="design-section-header-title" style="background-image: url(/images/headerart.svg);"></div>
+  <h6 class="subtitle">A grande maioria das artes que desenvolvi para redes sociais foram focadas no Instagram, geralmente no formato 1:1. Algumas outras artes incluem postagens em formato carrossel e folders no formato retrato 4:5.</h6>
+  
+</div>
+
+<div id="showcase-art" class="mdl-cell mdl-cell--12-col">
+
+</div>
+<div class="mdl-cell mdl-cell--12-col">
+  <button id="more-art" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored btn-more">
+    <i class="material-icons">add</i> Carregar mais
+  </button>
+  <div id="spinner-art" class="design-spinner mdl-spinner mdl-js-spinner is-active"></div>
+</div>
+
+
+<div class="mdl-cell mdl-cell--12-col">  
+  <div class="design-bottom">
+    <a class="accent no-decoration design-totop" href="#design"><i class="material-icons accent">arrow_drop_up</i> Retornar ao topo</a>  
+    <hr class="design-bottom-hr">
+  </div>
+  <br><br>
+</div>
+
+<div class="mdl-cell mdl-cell--12-col design-section-header">
+  <div id="videos" class="design-section-header-title" style="background-image: url(/images/headervid.svg);"></div>  
+  <h6 class="subtitle">Todos os vídeos produzidos ou editados por mim, clique em cada um para reproduzí-los e obter maiores detalhes.</h6>          
+  <hr>
+</div>
+<div class="video-container">
+      <div class="video-header">
+        <span class="video-close">&times;</span>
+      </div> 
+      <video class="video-player" controls preload="none" type="video/mp4">
+      </video>              
+      <h4 class="video-title"></h4>
+      <hr>
+      <p class="video-date article-cover-date"></p>
+      <p class="video-description"></p>
+</div>
+
+<div id="showcase-vid" class="mdl-cell mdl-cell--12-col video-thumbnails design-vid">     
+</div>
+
+<button id="more-vid" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored btn-more">      
+  <i class="material-icons">add</i> Carregar mais      
+</button>
+<div id="spinner-vid" class="design-spinner mdl-spinner mdl-js-spinner is-active"></div>
+    
+<div class="expandable">
+  <div class="expandable-content hide">
+    <p>Quando comecei com a edição e produção de vídeos, escolhi o Openshot. As primeiras tarefas que recebi, antes mesmo de me tornar designer, se tratavam de tarefas triviais de edição: recortar e unir segmentos de vídeo com imagens, no muito adicionar algum texto ou aplicar transições. O Openshot oferecia alguns efeitos de fábrica bastante interessantes e serviu bem para essa finalidade. Porém, ele travava constantemente e, com o tempo, passei a buscar alternativas.
+      <br>
+      A segunda opção foi o Shotcut, outra ferramenta de edição simples, talvez, simples demais: a quantidade de efeitos era muito limitada, até mesmo tarefas simples como posicionar os elementos no vídeo, ampliar ou reduzir itens não tinham solução trivial. Por conta disso, tive que desenhar efeitos à mão, quadro a quadro para conseguir torná-lo usável. Até mesmo reordenar camadas de vídeo não era possível, uma ferramenta simplificada e suas grandes limitações foram se tornando cada vez mais inviáveis.
+      <br>
+      Atualmente, utilizo o HitFilm Express, um editor muito completo e com ferramenta embutida para criar efeitos. A curva de aprendizado foi muito menor do que eu esperava e é o aplicativo que eu recomendo para quem necessitar fazer edições de vídeo mais complexas.
+    </p>
+  </div>
+  <p class="expandable-title"><strong>Notas</strong> - clique para <span class="expandable-action">ampliar</span></p>
+  <i class="material-icons expandable-button">add</i>            
+      
+</div>
+    
+  
+        
+
+
+
+<div class="mdl-cell mdl-cell--12-col">
+  <br>    
+  <div class="design-bottom">
+    <a class="accent no-decoration design-totop" href="#design"><i class="material-icons accent">arrow_drop_up</i> Retornar ao topo</a>  
+    <hr class="design-bottom-hr">
+  </div>
+  <br>
+  <br>          
+  <br>
+  <br>
+  
+</div>
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/designController.js"></script>
+<script src="/js/design.js"></script>

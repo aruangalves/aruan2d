@@ -1,0 +1,1 @@
+let front = new frontController(true);

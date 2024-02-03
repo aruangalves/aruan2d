@@ -1,0 +1,208 @@
+<%- include('includes/header') -%>
+<%- include('includes/navigation') -%>
+
+<!-- PROJECT LIST -->
+<div id="dash-list" class="dash-cell mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+    <h1><i class="material-icons material-large-icon">terminal</i> Dev</h1>
+    <h3>Projetos</h3>
+    <span>Projetos exibidos em ordem alfabética ascendente.</span>
+
+    <table class="dash-table" id="dev-projects">
+        <thead class="dash-thead dash-thead-textfirst">
+            <tr>
+                <th>Título</th>
+                <th>Versão</th>
+                <th>Última modificação</th>
+                <th>Status do projeto</th>
+                <th>Sumário</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody class="dash-tbody dash-tbody-textfirst">
+            <tr>
+                <td>Nome do projeto</td>
+                <td>0.0.1</td>
+                <td>08/06/2022</td>
+                <td>Versão inicial</td>
+                <td>Um resumo bem bacana descrevendo o projeto, este é o texto que aparecerá na lista de projetos.</td>
+                <td class="tdactions">
+                    <button type="button" class="dash-tbtn btn-edit mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"><i class="material-icons">edit</i> Editar</button>
+                    <button type="button" class="dash-tbtn btn-delete mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"><i class="material-icons">delete</i>Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dash-actions">
+        <button type="button" id="newproject-btn" class="mdl-button mdl-js-button mdl-button--raised mdj-js-ripple-effect"><i class="material-icons">source</i> Novo projeto</button>
+        <div class="dash-paging">
+            <button id="dev-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">first_page</i>
+            </button>
+            <span class="mdl-tooltip" for="dev-page-first">Retornar à primeira página</span>
+            
+            <button id="dev-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">chevron_left</i>
+            </button>
+            <span class="mdl-tooltip" for="dev-page-prev">Retornar à página anterior</span>
+            <form id="dev-page-form" class="page-number" action="">
+            <input type="number" id="dev-page-no" name="dev-page-no" min="1" value="1">
+            </form>
+            <span>de <b id="dev-page-total" class="dev-page-total">40</b></span>
+            
+            <button id="dev-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">chevron_right</i>
+            </button>
+            <span class="mdl-tooltip" for="dev-page-next">Ir à página seguinte</span>
+            
+            <button id="dev-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">last_page</i>
+            </button>
+            <span class="mdl-tooltip" for="dev-page-last">Ir à última página</span>
+        </div>
+    </div>
+</div>
+
+<!-- FORM CREATE/UPDATE -->
+<div id="dash-form" class="dash-cell mdl-cell mdl-cell--12-col mdl-shadow--2dp hide">
+    <h2>Criar/editar projeto</h2>
+    <form method="post" action="/dashbrd/dev" novalidate>
+        <br>
+        <input type="hidden" id="_id" name="_id" value="">
+        <div class="dash-form-item">
+            <label class="dash-label" for="title">Título:</label>
+            <input type="text" id="title" name="title" class="dash-input">
+            <div class="dash-spacing">
+                <span class="form-error form-error-title"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="time">Data:</label>
+            <input type="date" id="time" name="time" class="dash-input">
+            <div class="dash-spacing">
+                <span class="form-error form-error-time"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="coverimg">Capa:</label>
+            <img class="dash-form-coverimg" id="coverpreview" src="/upload/images/post-test2.jpg">
+            <div class="dash-spacing">
+                <input type="file" id="coverimg" name="coverimg" class="dash-file" accept="image/jpeg,image/png,image/webp,image/gif">
+                <br>
+                <span><b>Opcional:</b> imagem-padrão será exibida caso nenhuma imagem seja selecionada. <br><b>Dimensões recomendadas:</b> largura - 900px, altura - 200 a 400px.</span>
+                <span class="form-error form-error-coverimg"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="abstract">Sumário:</label>
+            <textarea id="abstract" name="abstract" class="dash-textarea"></textarea>
+            <div class="dash-spacing">
+                <span>Este será o texto exibido na lista de projetos.</span>
+                <br>
+                <span class="form-error form-error-abstract"></span>
+            </div>
+        </div>
+        <br>  
+        <label class="dash-label">Detalhes:</label>    
+        <fieldset class="dash-fieldset">
+            <legend>Detalhes do projeto</legend>
+            
+            <label class="dash-label" for="status">Status do projeto:</label>
+            <select name="status" id="status" class="dash-select dash-fieldset-select">                
+                <option value="" selected>Selecione uma opção</option>
+                <option>Versão Inicial</option>
+                <option>Pré-Alfa</option>
+                <option>Alfa</option>
+                <option>Beta</option>
+                <option>Beta Permanente</option>
+                <option>Estável</option>
+                <option>Final</option>
+                <option>Manutenção</option>
+                <option>End-of-life</option>
+                <option>Descontinuado</option>
+            </select>            
+            <div class="dash-fieldset-spacing">
+                <span class="form-error form-error-status"></span>
+            </div>
+        
+        
+            <label class="dash-label" for="currentversion">Versão:</label>
+            <input type="text" id="currentversion" name="currentversion" class="dash-fieldset-input">
+            <div class="dash-fieldset-spacing">
+                <span class="form-error form-error-currentversion"></span>
+            </div>
+        
+            <label class="dash-label" for="externalurl">Link do projeto:</label>
+            <input type="url" id="externalurl" name="externalurl" class="dash-fieldset-input">
+            <div class="dash-fieldset-spacing">
+                <span class="form-error form-error-externalurl"></span>
+            </div>            
+        
+            <label class="dash-label" for="repo">Repositório:</label>
+            <input type="url" id="repo" name="repo" class="dash-fieldset-input">
+            <div class="dash-fieldset-spacing">
+                <span class="form-error form-error-repo"></span>
+            </div>            
+            
+            <label class="dash-label" for="license">Licença:</label>
+            <input type="text" id="license" name="license" class="dash-fieldset-input">
+            <div class="dash-fieldset-spacing">
+                <span class="form-error form-error-license"></span>
+            </div> 
+
+            <label class="dash-label" for="licenseurl">Link da licença:</label>
+            <input type="url" id="licenseurl" name="licenseurl" class="dash-fieldset-input">
+            <div class="dash-fieldset-spacing">
+                <span class="form-error form-error-licenseurl"></span>
+            </div>     
+            
+        </fieldset>
+        <br><br>
+        <label class="dash-label">Categoria:</label>
+        <fieldset class="dash-fieldset">
+            <legend>Categorias do projeto</legend>
+
+            <label class="dash-label" for="cat1">#1:</label>
+            <input type="text" id="cat1" name="cat1" class="dash-fieldset-input">
+            <label class="dash-label" for="cat2">#2:</label>
+            <input type="text" id="cat2" name="cat2" class="dash-fieldset-input">
+            <label class="dash-label" for="cat3">#3:</label>
+            <input type="text" id="cat3" name="cat3" class="dash-fieldset-input">
+            <div class="dash-fieldset-spacing">
+                <span>Você deve preencher pelo menos uma categoria.</span>
+                <span class="form-error form-error-categories"></span>
+            </div>
+            <hr>
+                <b style="font-size:1.1rem">Sugestões de categorias:</b>
+                <br>
+                <div id="devcategories" class="categories-buttons"></div>
+                <span>Estas são categorias já existentes associadas a pelo menos um projeto.<br> <i>Clique</i> para adicioná-la ao projeto atual.</span>
+        </fieldset>        
+
+        <h4>Visão Geral</h4>
+        <div id="editor-overview" class="editorjs"></div>
+        <h4>Introdução</h4>
+        <div id="editor-intro" class="editorjs"></div>
+        <h4>Manual</h4>
+        <div id="editor-manual" class="editorjs"></div>
+        <h4>Recursos</h4>
+        <div id="editor-resources" class="editorjs"></div>
+        <h4>Changelog</h4>
+        <div id="editor-changelog" class="editorjs"></div>
+
+        <br>
+        <span class="form-error form-error-total"></span>
+        <br><br><br>
+
+        <button id="dev-submit" type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent" disabled>Enviar</button>
+        <button id="dev-cancel" type="button" class="dash-form-btn mdl-button mdl-js-button mdl-button--primary">Cancelar</button>
+        <br><br>
+    </form>
+</div>
+
+<%- include('includes/endmain') -%>
+<%- include('includes/footer') -%>
+<%- include('includes/editor') -%>
+<script src="/js/ImagePreview.js"></script>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/dash_dev.js" type="module"></script>

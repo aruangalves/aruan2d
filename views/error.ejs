@@ -1,0 +1,27 @@
+<%- include('includes/header') -%>
+
+
+
+
+
+<div class="error-box mdl-cell mdl-cell--8-col mdl-card mdl-shadow--2dp">
+    <h1>Erro: <%= message %></h1>
+    <h2><%= error.status %></h2>
+    <br>
+    <strong>Detalhes do erro:</strong>
+    <pre><%= error.stack %></pre>
+
+</div>
+
+<div class="mdl-cell mdl-cell--8-col">
+    <br>
+    <a href="/">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">keyboard_double_arrow_left</i> Retornar ao início
+        </button>
+    </a>
+</div>
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/front.js"></script>

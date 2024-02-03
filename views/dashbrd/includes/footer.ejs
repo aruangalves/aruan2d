@@ -1,0 +1,52 @@
+<!-- MODALS //---->
+
+<!-- CHANGE PROFILE MODAL -->
+<div id="profile-modal" class="modal">
+    <div class="dash-modal-box modal-box mdl-shadow--4dp">
+        <h3>Editar perfil</h3>     
+        <form id="profile-form" method="post" action="/dashbrd/profilechange">
+            <input type="hidden" name="oldemail" value="<%= email %>">
+            <input type="hidden" name="oldavatar" value="<%= avatar %>">
+            <label for="prof-name" class="dash-modal-label">Nome</label>
+            <input type="text" id="prof-name" name="name" class="dash-modal-formitem" value="<%= name %>">
+            <label for="prof-email" class="dash-modal-label">E-mail</label>
+            <input type="email" id="prof-email" name="email" class="dash-modal-formitem" value="<%= email %>">
+            <label for="prof-file" class="dash-modal-label">Avatar</label>
+            <input type="file" id="prof-avatar" name="avatar" accept="image/jpeg,image/png,image/webp,image/gif" class="dash-modal-formitem">
+            <span id="profile-form-error" class="form-error"></span>
+            <br><br>
+            <button id="profile-form-submit" type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised">Enviar</button>
+            <button id="profile-form-cancel" type="button" class="dash-form-btn mdl-button mdl-js-button">Cancelar</button>
+        </form>
+    </div>
+</div>
+<!-- CHANGE PASSWORD MODAL -->
+<div id="password-modal" class="modal">
+    <div class="dash-modal-box modal-box mdl-shadow--4dp">  
+        <h3>Alterar senha</h3>      
+        <form id="pass-form" method="post" action="/dashbrd/passchange">
+            <input type="hidden" name="email" value="<%= email %>">
+            <label for="pass-oldpassword" class="dash-modal-label">Senha atual</label>
+            <input type="password" name="oldpassword" class="dash-modal-formitem">
+            <span id="oldpass-form-error" class="form-error"></span>
+            <br>
+            <label for="pass-newpassword" class="dash-modal-label">Senha nova</label>
+            <input type="password" id="pass-newpassword" name="newpassword" class="dash-modal-formitem">
+            <span id="newpass-form-error" class="form-error"></span>
+            <label for="pass-confpassword" class="dash-modal-label">Confirme a senha nova</label>
+            <input type="password" id="pass-confpassword" name="confpassword" class="dash-modal-formitem">
+            <span id="confpass-form-error" class="form-error"></span>
+            <span id="pass-form-error" class="form-error"></span>
+            <br><br>
+            <button id="pass-form-submit" type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised">Enviar</button>
+            <button id="pass-form-cancel" type="button" class="dash-form-btn mdl-button mdl-js-button">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+<!----//MODALS END -->
+
+<script defer src="/mdl/material.min.js"></script>
+<script src="/js/dash.js"></script>
+</body>
+</html>

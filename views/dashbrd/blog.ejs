@@ -1,0 +1,136 @@
+<%- include('includes/header') -%>
+<%- include('includes/navigation') -%>
+
+<!-- POST LIST -->
+<div id="dash-form-list" class="dash-cell mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+    <h1><i class="material-icons material-large-icon">speaker_notes</i> Blog</h1>    
+    <h3>Posts</h3>
+    <span>Posts exibidos em ordem descendente por <i>data de publicação.</i></span>    
+    <table class="dash-table" id="blog-posts">
+        <thead class="dash-thead dash-thead-textfirst">
+            <tr>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Categorias</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody class="dash-tbody dash-tbody-textfirst">
+            <tr>
+                <td>Título</td>
+                <td>30/10/2022, às 16h20</td>
+                <td>Categoria 1, Categoria 2</td>
+                <td class="tdactions">
+                    <button type="button" class="dash-tbtn btn-edit mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"><i class="material-icons">edit</i> Editar</button>
+                    <button type="button" class="dash-tbtn btn-delete mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"><i class="material-icons">delete</i>Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="dash-actions">
+        <button type="button" id="newpost-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"><i class="material-icons">post_add</i> Novo post</button>
+        <div class="dash-paging">
+            <button id="blog-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">first_page</i>
+              </button>
+              <span class="mdl-tooltip" for="blog-page-first">Retornar à primeira página</span>
+              
+              <button id="blog-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">chevron_left</i>
+              </button>
+              <span class="mdl-tooltip" for="blog-page-prev">Retornar à página anterior</span>
+              <form id="blog-page-form" class="page-number" action="">
+                <input type="number" id="blog-page-no" name="blog-page-no" min="1" value="1">
+              </form>
+              <span>de <b id="blog-page-total" class="blog-page-total">40</b></span>
+              
+              <button id="blog-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">chevron_right</i>
+              </button>
+              <span class="mdl-tooltip" for="blog-page-next">Ir à página seguinte</span>
+              
+              <button id="blog-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">last_page</i>
+              </button>
+              <span class="mdl-tooltip" for="blog-page-last">Ir à última página</span>
+        </div>        
+    </div> 
+    
+
+    
+</div>
+
+<div class="dash-cell mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+    <h4>Categorias</h4>    
+    <span>Todas as categorias associadas a pelo menos um post. <i>Clique</i> para adicioná-la a um post que você esteja criando ou editando.</span>
+    <br><br>
+    <div id="blogcategories" class="categories-buttons"></div>
+</div>
+<!-- FORM CREATE/UPDATE -->
+<div id="dash-form-div" class="dash-cell mdl-cell mdl-cell--12-col mdl-shadow--2dp hide">
+    <h2>Criar/editar post</h2>
+    <form method="post" action="/dashbrd/blog">
+        <br>
+        <input type="hidden" id="_id" name="_id" value="">
+        <div class="dash-form-item">
+            <label class="dash-label" for="title">Título:</label>
+            <input type="text" id="title" name="title" class="dash-input">
+            <div class="dash-spacing">
+                <span class="form-error form-error-title"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="coverimg">Capa:</label>
+            <img class="dash-form-coverimg" id="coverpreview" src="/upload/images/post-test3.jpg">
+            <div class="dash-spacing">
+                <input type="file" id="coverimg" name="coverimg" class="dash-file" accept="image/jpeg,image/png,image/webp,image/gif">
+                <br>
+                <span><b>Opcional:</b> imagem-padrão será exibida caso nenhuma imagem seja selecionada. <br><b>Dimensões recomendadas:</b> largura - 900px, altura - 200 a 400px.</span>
+                <span class="form-error form-error-coverimg"></span>
+            </div>            
+        </div>
+        <br>
+        <h3><i class="material-icons" style="vertical-align:-15%; margin-right: 0.5rem; font-size: 36px;">newspaper</i>Texto</h3>
+        <div id="editor" class="editorjs"></div>
+        <br><br>
+        <h5><i class="material-icons" style="vertical-align:-20%; margin-right: 0.5rem;">auto_stories</i>Referências</h5>
+        <div class="dash-form-item dash-form-gallery">
+            <input type="hidden" id="refno" name="refno" value="0">
+            <div id="dash-refcontainer" class="dash-form-fcontainer">
+                <button type="button" id="refadd" class="dash-gallery-btn mdl-button mdl-js-button">
+                    <i class="material-icons">add_circle_outline</i> Adicionar referência
+                </button>
+            </div>            
+        </div>
+        <br>
+        <h5><i class="material-icons" style="vertical-align:-20%; margin-right: 0.5rem;">ballot</i>Categorias</h5>
+        <div class="dash-form-item dash-form-gallery">
+            <input type="hidden" id="catno" name="catno" value="0">
+            <div id="dash-catcontainer" class="dash-form-fcontainer">
+                <button type="button" id="catadd" class="dash-gallery-btn mdl-button mdl-js-button">
+                    <i class="material-icons">add_circle_outline</i> Adicionar categoria
+                </button>
+            </div>            
+        </div>        
+        <span style="display: block; margin-top: 0.3rem;">O post deve conter pelo menos uma categoria e não deve exceder dez categorias.<br>
+        Cada categoria deve conter pelo menos uma palavra com, no mínimo, três caracteres.</span>
+        <br>
+        <span class="form-error form-error-total"></span>
+        <br><br><br>
+
+
+        <button id="blog-submit" type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent" disabled>Enviar</button>
+        <button id="blog-cancel" type="button" class="dash-form-btn mdl-button mdl-js-button mdl-button--primary">Cancelar</button>
+        <br><br>
+    </form>
+</div>
+
+
+<%- include('includes/endmain') -%>
+<%- include('includes/footer') -%>
+<%- include('includes/editor') -%>
+<script src="/js/ImagePreview.js"></script>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/dash_blog.js" type="module"></script>

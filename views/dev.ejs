@@ -1,0 +1,196 @@
+<%- include('includes/header') -%>
+
+
+<div class="mdl-cell mdl-cell--12-col dev-header">
+  <div class="index-dev-title">
+    <h1>: : Dev : .</h1>
+    <% if(typeof header !== "undefined"){ %>   
+      <h3><%= header %> .</h3>
+    <% } %>
+    
+    <span>
+      : : Todos os recursos dos projetos desenvolvidos estão disponíveis aqui. Consulte por categorias ou através da lista alfabética abaixo.
+    </span>    
+  </div>  
+</div>
+
+<div class="dev-menu">            
+  <button id="dev-alpha-btn" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">
+    Lista Alfabética
+  </button>
+  <div class="dev-menu-separator"></div>
+  <button id="dev-cat-btn" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">
+    Categorias
+  </button> 
+</div>
+<div class="dev-alpha hide">
+  <h5 id="dlist">Listagem:</h5>
+  <p class="dev-alpha-list">                        
+    <a href="#d0">#</a> | <a href="#da">A</a> | <a href="#db">B</a> | <a href="#dc">C</a> | <a href="#dd">D</a> | <a href="#de">E</a> |
+     <a href="#df">F</a> | <a href="#dg">G</a> | <a href="#dh">H</a> | <a href="#di">I</a> | <a href="#dj">J</a> | <a href="#dj">K</a> |
+      <a href="#dl">L</a> | <a href="#dm">M</a> | <a href="#dn">N</a> | <a href="#do">O</a> | <a href="#dp">P</a> | <a href="#dq">Q</a> |
+      <a href="#dr">R</a> | <a href="#ds">S</a> | <a href="#dt">T</a> | <a href="#du">U</a> | <a href="#dv">V</a> | <a href="#dw">W</a> |
+      <a href="#dx">X</a> | <a href="#dy">Y</a> | <a href="#dz">Z</a>
+  </p>          
+  <hr>
+  <div id="d-group">
+    <div id="d0-group">
+      <a><h3 id="d0">#</h3></a>
+      <div class="d0-items dev-alpha-items">    
+      </div>  
+    </div>
+    <div id="da-group">
+      <a><h3 id="da">A</h3></a>
+      <div class="da-items dev-alpha-items">    
+      </div>  
+    </div>
+    <div id="db-group">
+      <a><h3 id="db">B</h3></a>
+      <div class="db-items dev-alpha-items"></div>
+    </div>
+    <div id="dc-group">
+      <a><h3 id="dc">C</h3></a>
+      <div class="dc-items dev-alpha-items"></div>
+    </div>
+    <div id="dd-group">
+      <a><h3 id="dd">D</h3></a>
+      <div class="dd-items dev-alpha-items"></div>
+    </div>
+    <div id="de-group">
+      <a><h3 id="de">E</h3></a>
+      <div class="de-items dev-alpha-items"></div>
+    </div>
+    <div id="df-group">
+      <a><h3 id="df">F</h3></a>
+      <div class="df-items dev-alpha-items"></div>
+    </div>
+    <div id="dg-group">
+      <a><h3 id="dg">G</h3></a>
+      <div class="dg-items dev-alpha-items"></div>
+    </div>
+    <div id="dh-group">
+      <a><h3 id="dh">H</h3></a>
+      <div class="dh-items dev-alpha-items"></div>
+    </div>
+    <div id="di-group">
+      <a><h3 id="di">I</h3></a>
+      <div class="di-items dev-alpha-items"></div>
+    </div>
+    <div id="dj-group">
+      <a><h3 id="dj">J</h3></a>
+      <div class="dj-items dev-alpha-items"></div>
+    </div>
+    <div id="dk-group">
+      <a><h3 id="dk">K</h3></a>
+      <div class="dk-items dev-alpha-items"></div>
+    </div>
+    <div id="dl-group">
+      <a><h3 id="dl">L</h3></a>
+      <div class="dl-items dev-alpha-items"></div>
+    </div>
+    <div id="dm-group">
+      <a><h3 id="dm">M</h3></a>
+      <div class="dm-items dev-alpha-items"></div>
+    </div>
+    <div id="dn-group">
+      <a><h3 id="dn">N</h3></a>
+      <div class="dn-items dev-alpha-items"></div>
+    </div>
+    <div id="do-group">
+      <a><h3 id="do">O</h3></a>
+      <div class="do-items dev-alpha-items"></div>
+    </div>
+    <div id="dp-group">
+      <a><h3 id="dp">P</h3></a>
+      <div class="dp-items dev-alpha-items"></div>
+    </div>
+    <div id="dq-group">
+      <a><h3 id="dq">Q</h3></a>
+      <div class="dq-items dev-alpha-items"></div>
+    </div>
+    <div id="dr-group">
+      <a><h3 id="dr">R</h3></a>
+      <div class="dr-items dev-alpha-items"></div>
+    </div>
+    <div id="ds-group">
+      <a><h3 id="ds">S</h3></a>
+      <div class="ds-items dev-alpha-items"></div>
+    </div>
+    <div id="dt-group">
+      <a><h3 id="dt">T</h3></a>
+      <div class="dt-items dev-alpha-items"></div>
+    </div>
+    <div id="du-group">
+      <a><h3 id="du">U</h3></a>
+      <div class="du-items dev-alpha-items"></div>
+    </div>
+    <div id="dv-group">
+      <a><h3 id="dv">V</h3></a>
+      <div class="dv-items dev-alpha-items"></div>
+    </div>
+    <div id="dw-group">
+      <a><h3 id="dw">W</h3></a>
+      <div class="dw-items dev-alpha-items"></div>
+    </div>
+    <div id="dx-group">
+      <a><h3 id="dx">X</h3></a>
+      <div class="dx-items dev-alpha-items"></div>
+    </div>
+    <div id="dy-group">
+      <a><h3 id="dy">Y</h3></a>
+      <div class="dy-items dev-alpha-items"></div>
+    </div>
+    <div id="dz-group">
+      <a><h3 id="dz">Z</h3></a>
+      <div class="dz-items dev-alpha-items"></div>
+    </div> 
+  </div>
+</div>
+<div class="dev-categories hide">
+</div>
+
+<div class="dev-projects">  
+</div>
+
+
+
+<br>
+<br>
+
+<!-- PAGE NUMBERING COLUMN -->
+<div class="pages-container mdl-cell mdl-cell--12-col">
+  <div class="pages">    
+    <button id="page-first" class="page-first mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="material-icons">first_page</i>
+    </button>
+    <span class="mdl-tooltip" for="page-first">Retornar à primeira página</span>    
+    <button id="page-previous" class="page-previous mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="material-icons">chevron_left</i>
+    </button>
+    <span class="mdl-tooltip" for="page-previous">Retornar à página anterior</span>
+    <form class="page-number">
+      <input type="number" id="page-input" name="page-input" class="page-input" min="1" value="1">              
+    </form>
+    <span>de <b class="page-total" id="page-total">40</b></span>    
+    <button id="page-next" class="page-next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="material-icons">chevron_right</i>
+    </button>
+    <span class="mdl-tooltip" for="page-next">Ir à página seguinte</span>    
+    <button id="page-last" class="page-last mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="material-icons">last_page</i>
+    </button>
+    <span class="mdl-tooltip" for="page-last">Ir à última página</span>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/devController.js" type="module"></script>
+<% if(typeof header === "undefined"){ %>
+<script src="/js/dev.js" type="module"></script>
+<% }else{ %>
+<script src="/js/devcategory.js" type="module"></script>
+<% } %>

@@ -1,0 +1,44 @@
+.editor-quote-wrapper{
+    display: block;
+}
+
+.editor-quote,.editor-quote-author, .editor-quote:active, .editor-quote-author:active{
+    border: none;
+    border-image-width: 0;
+    background-color: none;
+}
+
+.editor-quote{    
+    text-align: center;    
+    font-size: 150%;
+    line-height: 1.05;
+    padding-bottom: 1.2rem;
+}
+
+.editor-quote:before{
+    content: open-quote;    
+    margin-right: 1px;
+    font-size: 150%;
+    font-weight: bolder;
+    color: var(--darkred);
+}
+
+.editor-quote:after{
+    content: close-quote;    
+    margin-left: 1px;
+    font-size: 150%;
+    font-weight: bolder;
+    color: var(--darkred);
+}
+
+.editor-quote-author{
+    text-align: center;
+    margin-top: -18px;
+    margin-left: 2%;    
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.editor-quote-author:before{
+    content: "- ";
+}

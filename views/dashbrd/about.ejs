@@ -1,0 +1,29 @@
+<%- include('includes/header') -%>
+<%- include('includes/navigation') -%>
+
+<div class="dash-about dash-cell mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+    <h2>Editar seção "Sobre"</h2>    
+    <form method="post" action="/dashbrd/about">
+        <br>        
+        <h4>Imagem de perfil</h4>        
+        <input type="hidden" id="_id" name="_id" <% if(body.status){ %>value="<%= body.doc._id %>"<% }else{ %>value=""<% } %>>
+        <div class="dash-spacing">
+            <img class="dash-form-img" id="imgpreview" <% if(body.status){ %>src="<%= body.doc.img %>"<% }else{ %>src="/images/preview.jpg" alt="Avatar da página Sobre"<% } %>>
+            <input type="file" id="img" class="dash-file" name="img" accept="image/jpeg,image/png,image/webp,image/gif">                
+            <span class="form-error form-error-img"></span>
+        </div>        
+        <h4>Texto</h4>        
+        <div id="editor" class="editorjs" <% if(body.status){ %>data-row="<%= JSON.stringify(body.doc.data) %>"<% } %>></div>        
+        <br><br>
+        <div class="dash-spacing">
+            <span class="form-error form-error-total"></span>
+        </div>
+        <button id="about-submit" type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent" disabled>Enviar</button>        
+    </form>
+</div>
+
+<%- include('includes/endmain') -%>
+<%- include('includes/footer') -%>
+<%- include('includes/editor') -%>
+<script src="/js/ImagePreview.js"></script>
+<script src="/js/dash_about.js" type="module"></script>

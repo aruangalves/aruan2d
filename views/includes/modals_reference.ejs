@@ -1,0 +1,73 @@
+        <!-- MODALS -->
+
+        <!-- MODAL -->
+          <div id="modal-search" class="modal">          
+          
+            <div id="modal-box" class="modal-box mdl-shadow--4dp">
+              <div class="modal-header">
+                <span id="modal-close" class="modal-header-button">&times;</span>
+              </div> 
+              <h2>Busca</h2>                         
+              <form id="search-form" method="post" action="/search">
+                <input name="search" id="searchinput" type="text">
+              </form>
+              <div id="search-results">
+                <h5 id="search-info"><span id="search-amount"></span> resultados para "<span id="search-term"></span>":</h5>
+
+                <div id="search-container">
+                  <div class="search-item">
+                    <span class="search-tag">BLOG</span>
+                    <a class="search-link" href="#">Nome do post ou projeto</a>
+                    <p class="search-abstract">Um parágrafo com um resumo do post ou projeto encontrado nas seções dev ou blog. É basicamente o sumário do projeto ou um resumo gerado automaticamente ao aglutinar os primeiros parágrafos do post até um certo limite de caracteres.</p>
+                  </div>
+                  <div class="search-item">
+                    <span class="search-tag">DEV</span>
+                    <a class="search-link" href="#">Nome do post ou projeto</a>
+                    <p class="search-abstract">Um parágrafo com um resumo do post ou projeto encontrado nas seções dev ou blog. É basicamente o sumário do projeto ou um resumo gerado automaticamente ao aglutinar os primeiros parágrafos do post até um certo limite de caracteres.</p>
+                  </div>                  
+                </div>
+                <div id="search-loading" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>                
+
+                <button type="button" id="search-more" class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect">Mais resultados <i class="material-icons">double_arrow</i></button>
+
+                <br><br>
+
+
+              </div>              
+            </div>
+  
+          </div>
+          <!-- MODAL ARTICLE FIGURE -->
+  
+  
+          <div id="modal-article-figure" class="modal-figure">
+            <div class="modal-figure-container">
+              <a id="modal-figure-expand" class="material-icons modal-figure-button" href="#" target="_blank">open_in_new</a>
+              <span id="modal-figure-close" class="modal-figure-button">&times;</span>
+              <img class="modal-figure-img">
+              <div class="modal-figure-caption"></div>              
+            </div>            
+          </div>
+  
+          <!-- MODAL DESIGN FIGURE -->
+          <div id="modal-design" class="modal">
+            
+            <div class="modal-box mdl-shadow--4dp">            
+              <div class="modal-header">
+                <a id="modal-design-expand" class="material-icons modal-header-button" href="#" target="_blank">open_in_new</a>            
+                <span id="modal-design-close" class="modal-header-button">&times;</span>
+              </div>
+              
+              
+              <h3 class="modal-design-title"></h3>
+              <p class="design-date"><strong> Criado em: </strong><span class="modal-design-date"></span></p>
+              <hr>
+              <img class="modal-design-image">           
+              <br><br>
+              <p class="modal-design-text" style="font-size: 1.4em;"></p>
+              <br>
+            </div>
+  
+          </div>
+  
+          <!--END MODALS-->

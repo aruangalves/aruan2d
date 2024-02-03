@@ -1,0 +1,480 @@
+<%- include('includes/header') -%>
+<%- include('includes/navigation') -%>
+
+<!-- MAIN CONTENT -->
+
+<!-- MENU CADASTRO -->
+<div class="dash-design dash-design-actions mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">
+    <h2>Cadastrar nova</h2>
+    <hr>
+    <button id="dash-design-btn-logo" class="dash-design-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">storm</i>
+        <br>
+        <span>Logo</span>
+    </button>
+    <button id="dash-design-btn-printable" class="dash-design-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <i class="material-icons">style</i>
+        <br>
+        <span>Gráfica</span>
+    </button>
+    <button id="dash-design-btn-art" class="dash-design-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        <i class="material-icons">draw</i>
+        <br>
+        <span>Arte</span>
+    </button>
+    <button id="dash-design-btn-video" class="dash-design-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        <i class="material-icons">movie</i>
+        <br>
+        <span>Vídeo</span>        
+    </button>
+</div>
+
+<!-- FORMS -->
+<div class="dash-design-form-logo dash-design mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp hide">
+    <h3>Criar/Editar Logo</h3>
+    <hr>
+    <form method="post" action="/dashbrd/design/logo">
+        <input type="hidden" id="logoid" name="logoid" value="">
+        <div class="dash-form-item">
+            <label class="dash-label" for="logoimg">Imagem:</label>
+            <img class="dash-form-img" src="/images/preview.jpg">
+            <div class="dash-spacing">
+                <input type="file" id="logoimg" class="dash-file" name="logoimg" accept="image/jpeg,image/png,image/webp,image/gif">                
+                <span class="form-error form-error-img"></span>
+            </div>            
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="arttitle">Título:</label>
+            <input type="text" id="logotitle" class="dash-input" name="logotitle">
+            <div class="dash-spacing">
+                <span class="form-error form-error-title"></span>
+            </div>            
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="logodate">Data:</label>
+            <input type="date" id="logodate" class="dash-input" name="logodate">
+            <div class="dash-spacing">
+                <span class="form-error form-error-date"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="logodesc">Descrição:</label>
+            <textarea id="logodesc" class="dash-textarea" name="logodesc"></textarea>
+            <div class="dash-spacing">
+                <span class="form-error form-error-desc"></span>
+            </div>
+        </div>
+        <div class="dash-form-item dash-form-gallery">
+            <input type="hidden" id="logogno" name="logogno" value="0">
+            <label class="dash-label">Galeria:</label>
+            <div class="dash-form-gcontainer">                
+                <button type="button" id="logoaddgallery" class="dash-gallery-btn mdl-button mdl-js-button"><i class="material-icons">add_circle_outline</i> Adicionar item</button>
+            </div>
+        </div>
+        <div class="dash-spacing">
+            <span class="form-error form-error-total"></span>
+        </div>
+        <br>
+        <br>
+        <div class="dash-spacing">
+            <button type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Enviar</button>        
+            <button type="button" id="logocancel" class="dash-form-btn mdl-button mdl-js-button mdl-button--primary">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<div class="dash-design-form-printable dash-design  mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp hide">
+    <h3>Criar/Editar Material Gráfico</h3>
+    <hr>
+    <form method="post" action="/dashbrd/design/print">
+        <input type="hidden" id="printid" name="printid" value="">
+        <div class="dash-form-item">
+            <label class="dash-label" for="printimg">Imagem:</label>
+            <img class="dash-form-img" src="/images/preview.jpg">
+            <div class="dash-spacing">
+                <input type="file" id="printimg" class="dash-file" name="printimg" accept="image/jpeg,image/png,image/webp,image/gif">
+                <span class="form-error form-error-img"></span>
+            </div>            
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="printtitle">Título:</label>
+            <input type="text" id="printtitle" class="dash-input" name="printtitle">
+            <div class="dash-spacing">
+                <span class="form-error form-error-title"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="printdate">Data:</label>
+            <input type="date" id="printdate" class="dash-input" name="printdate">
+            <div class="dash-spacing">
+                <span class="form-error form-error-date"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="printdesc">Descrição:</label>
+            <textarea id="printdesc" class="dash-textarea" name="printdesc"></textarea>
+            <div class="dash-spacing">
+                <span class="form-error form-error-desc"></span>
+            </div>
+        </div>
+        <div class="dash-form-item dash-form-gallery">
+            <input type="hidden" id="printgno" name="printgno" value="0">
+            <label class="dash-label">Galeria:</label>
+            <div class="dash-form-gcontainer">
+                <!--<div class="dash-form-gitem">
+                    <h5>Imagem #1</h5>
+                    <label class="dash-label" for="printgi1">Arquivo:</label>
+                    <input type="file" id="printgi1" name="printgi1" class="printitemimg dash-file" accept="image/jpeg,image/png,image/webp,image/gif">
+                    <span id="form-error-logo-gi1" class="form-error"></span>
+                    <label class="dash-label" for="printgt1">Descrição:</label>
+                    <input type="text" id="printgt1" name="printgt1" class="printitemtext dash-input">
+                    <span id="form-error-logo-gi1" class="form-error"></span>                    
+                    <button type="button" class="dash-gitem-remove mdl-button mdl-js-button"><i class="material-icons">cancel</i> Excluir</button>
+                </div>-->
+                <button type="button" id="printaddgallery" class="dash-gallery-btn mdl-button mdl-js-button"><i class="material-icons">add_circle_outline</i> Adicionar item</button>
+            </div>
+        </div>
+        <div class="dash-spacing">
+            <span class="form-error form-error-total"></span>
+        </div>               
+        <br>
+        <br>
+        <div class="dash-spacing">
+            <button type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Enviar</button>        
+            <button type="button" id="printcancel" class="dash-form-btn mdl-button mdl-js-button mdl-button--primary">Cancelar</button>
+        </div>        
+    </form>
+</div>
+
+<div class="dash-design-form-art dash-design mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp hide">
+    <h3>Criar/Editar Arte</h3>
+    <hr>
+    <form method="post" action="/dashbrd/design/art">
+        <input type="hidden" id="artid" name="artid" value="">
+        <div class="dash-form-item">
+            <label class="dash-label" for="artimg">Imagem:</label>
+            <img class="dash-form-img" src="/images/preview.jpg">
+            <div class="dash-spacing">
+                <input type="file" id="artimg" class="dash-file" name="artimg" accept="image/jpeg,image/png,image/webp,image/gif">
+                <span class="form-error form-error-img"></span>
+            </div>            
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="arttitle">Título:</label>
+            <input type="text" id="arttitle" class="dash-input" name="arttitle">
+            <div class="dash-spacing">
+                <span class="form-error form-error-title"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="artdate">Data:</label>
+            <input type="date" id="artdate" class="dash-input" name="artdate">
+            <div class="dash-spacing">
+                <span class="form-error form-error-date"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="artdesc">Descrição:</label>
+            <textarea id="artdesc" class="dash-textarea" name="artdesc"></textarea>
+            <div class="dash-spacing">
+                <span class="form-error form-error-desc"></span>
+            </div>
+        </div>
+        <div class="dash-spacing">
+            <span class="form-error form-error-total"></span>
+        </div>
+        <br>
+        <br>
+        <div class="dash-spacing">
+            <button type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Enviar</button>        
+            <button type="button" id="artcancel" class="dash-form-btn mdl-button mdl-js-button mdl-button--primary">Cancelar</button>
+        </div>   
+    </form>
+</div>
+
+<div class="dash-design-form-video dash-design mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp hide">
+    <h3>Criar/Editar Vídeo</h3>
+    <hr>
+    <form method="post" action="/dashbrd/design/vid">
+        <input type="hidden" id="vidid" name="vidid">
+        <div class="dash-form-item">
+            <label class="dash-label" for="vidfile">Arquivo:</label>            
+            <input type="file" id="vidfile" class="dash-file" name="vidfile" accept=".mp4,video/mp4">
+            <div class="dash-spacing">
+                <span class="form-error form-error-file"></span>
+            </div>            
+        </div>
+        <div clas="dash-form-item">
+            <label class="dash-label" for="vidtitle">Título:</label>
+            <input type="text" id="vidtitle" class="dash-input" name="vidtitle">
+            <div class="dash-spacing">
+                <span class="form-error form-error-title"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="viddate">Data:</label>
+            <input type="date" id="viddate" class="dash-input" name="viddate">
+            <div class="dash-spacing">
+                <span class="form-error form-error-date"></span>
+            </div>
+        </div>
+        <div class="dash-form-item">
+            <label class="dash-label" for="viddesc">Descrição:</label>
+            <textarea id="viddesc" class="dash-textarea" name="viddesc"></textarea>
+            <div class="dash-spacing">
+                <span class="form-error form-error-desc"></span>
+            </div>
+        </div>        
+        <div class="dash-form-item">
+            <label class="dash-label" for="vidthumb">Thumbnail:</label>
+            <img class="dash-form-img" src="/images/preview.jpg">
+            <div class="dash-spacing">
+                <input type="file" id="vidthumb" class="dash-file" name="vidthumb" accept="image/jpeg,image/png,image/webp,image/gif">
+                <span class="form-error form-error-thumb"></span>
+            </div>
+        </div>
+        <div class="dash-spacing">
+            <span class="form-error form-error-total"></span>
+        </div>
+        <br>
+        <br>
+        <div class="dash-spacing">
+            <button type="submit" class="dash-form-btn mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Enviar</button>        
+            <button type="button" id="vidcancel" class="dash-form-btn mdl-button mdl-js-button mdl-button--primary">Cancelar</button>
+        </div>
+    </form>
+
+</div>
+
+<!-- TABLES -->
+<div class="dash-design dash-design-list-logo mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">
+    <h2><i class="material-icons" style="font-size:36px;">storm</i> Logos</h2>
+
+    <table class="dash-table table-logo">        
+        <thead class="dash-thead thead-logo">
+            <tr>
+                <th>Imagem</th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Galeria</th>
+                <th>Ações</th>
+            </tr>            
+        </thead>
+        <tbody class="dash-tbody">
+            <!--<tr>
+                <td><img class="dash-table-img" src="/images/preview.jpg"></td>
+                <td>Exemplo 1</td>
+                <td>15/02/2020</td>
+                <td>Um texto de exemplo mostrando a logo... Irei digitar um texto bem longo para forçar a tabela a se redimensionar.</td>
+                <td>Não</td>
+                <td class="tdactions">
+                    <button type="button" class="dash-tbtn btn-logo-edit mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"><i class="material-icons">edit</i> Editar</button>
+                    <button type="button" class="dash-tbtn btn-logo-delete mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"><i class="material-icons">delete</i>Excluir</button>
+                </td>                
+            </tr>-->
+        </tbody>        
+    </table>
+
+    <div class="dash-paging">
+        <button id="logo-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">first_page</i>
+          </button>
+          <span class="mdl-tooltip" for="logo-page-first">Retornar à primeira página</span>
+          
+          <button id="logo-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_left</i>
+          </button>
+          <span class="mdl-tooltip" for="logo-page-prev">Retornar à página anterior</span>
+          <form id="logo-page-form" class="page-number" action="#">
+            <input type="number" id="logo-page-no" min="1" value="1">              
+          </form>
+          <span>de <b class="logo-page-total">40</b></span>
+          
+          <button id="logo-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_right</i>
+          </button>
+          <span class="mdl-tooltip" for="logo-page-next">Ir à página seguinte</span>
+          
+          <button id="logo-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">last_page</i>
+          </button>
+          <span class="mdl-tooltip" for="logo-page-last">Ir à última página</span>
+    </div>   
+</div>
+
+<div class="dash-design dash-design-list-printable mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">    
+    <h2><i class="material-icons" style="font-size:36px;">style</i> Gráfica</h2>
+
+    <table class="dash-table table-print">        
+        <thead class="dash-thead thead-printable">
+            <tr>
+                <th>Imagem</th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Galeria</th>
+                <th>Ações</th>
+            </tr>            
+        </thead>
+        <tbody class="dash-tbody">
+            <!--<tr>
+                <td><img class="dash-table-img" src="/images/preview.jpg"></td>
+                <td>Exemplo 1</td>
+                <td>15/02/2020</td>
+                <td>Texto descrevendo o material gráfico</td>
+                <td>Não</td>
+                <td class="tdactions">
+                    <button type="button" class="dash-tbtn btn-printable-edit mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"><i class="material-icons">edit</i> Editar</button>
+                    <button type="button" class="dash-tbtn btn-printable-delete mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"><i class="material-icons">delete</i>Excluir</button>
+                </td>                
+            </tr>-->
+        </tbody>        
+    </table>
+
+    <div class="dash-paging">
+        <button id="print-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">first_page</i>
+          </button>
+          <span class="mdl-tooltip" for="print-page-first">Retornar à primeira página</span>
+          
+          <button id="print-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_left</i>
+          </button>
+          <span class="mdl-tooltip" for="print-page-prev">Retornar à página anterior</span>
+          <form id="print-page-form" class="page-number" action="#">
+            <input type="number" id="print-page-no" min="1" value="1">              
+          </form>
+          <span>de <b class="print-page-total">40</b></span>
+          
+          <button id="print-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_right</i>
+          </button>
+          <span class="mdl-tooltip" for="print-page-next">Ir à página seguinte</span>
+          
+          <button id="print-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">last_page</i>
+          </button>
+          <span class="mdl-tooltip" for="print-page-last">Ir à última página</span>
+    </div>
+</div>
+
+<div class="dash-design dash-design-list-art mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">
+    <h2><i class="material-icons" style="font-size:36px;">draw</i> Artes</h2> 
+
+    <table class="dash-table table-art">        
+        <thead class="dash-thead thead-art">
+            <tr>
+                <th>Imagem</th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Descrição</th>                
+                <th>Ações</th>
+            </tr>            
+        </thead>
+        <tbody class="dash-tbody">
+            <!--<tr>
+                <td><img class="dash-table-img" src="/images/preview.jpg"></td>
+                <td>Exemplo muito bom 1</td>
+                <td>15/02/2020</td>
+                <td>Texto descrevendo a arte</td>                
+                <td class="tdactions">
+                    <button type="button" class="dash-tbtn btn-art-edit mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"><i class="material-icons">edit</i> Editar</button>
+                    <button type="button" class="dash-tbtn btn-art-delete mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"><i class="material-icons">delete</i>Excluir</button>
+                </td>                
+            </tr>-->
+        </tbody>        
+    </table>
+
+    <div class="dash-paging">
+        <button id="art-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">first_page</i>
+          </button>
+          <span class="mdl-tooltip" for="art-page-first">Retornar à primeira página</span>
+          
+          <button id="art-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_left</i>
+          </button>
+          <span class="mdl-tooltip" for="art-page-prev">Retornar à página anterior</span>
+          <form id="art-page-form" class="page-number" action="#">
+            <input type="number" id="art-page-no" min="1" value="1">
+          </form>
+          <span>de <b class="art-page-total">40</b></span>
+          
+          <button id="art-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_right</i>
+          </button>
+          <span class="mdl-tooltip" for="art-page-next">Ir à página seguinte</span>
+          
+          <button id="art-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">last_page</i>
+          </button>
+          <span class="mdl-tooltip" for="art-page-last">Ir à última página</span>
+    </div>
+</div>
+
+<div class="dash-design dash-design-list-video mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">
+    <h2><i class="material-icons" style="font-size:36px;">movie</i> Vídeos</h2>    
+
+    <table class="dash-table table-vid">        
+        <thead class="dash-thead thead-video">
+            <tr>
+                <th>Thumbnail</th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Vídeo</th>
+                <th>Ações</th>
+            </tr>            
+        </thead>
+        <tbody class="dash-tbody">
+            <tr>
+                <!--<td><img class="dash-table-img" src="/images/preview.jpg"></td>
+                <td>Exemplo 1</td>
+                <td>15/02/2020</td>
+                <td>Texto descrevendo um vídeo</td>
+                <td><a class="dash-tlink" target="_blank" href="/upload/videos/3anosPaulistaBurguer.mp4"><button type="button" class="dash-tbtn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"><i class="material-icons">play_arrow</i>Abrir</button></a></td>
+                <td class="tdactions">
+                    <button type="button" class="dash-tbtn btn-video-edit mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"><i class="material-icons">edit</i> Editar</button>
+                    <button type="button" class="dash-tbtn btn-video-delete mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"><i class="material-icons">delete</i>Excluir</button>
+                </td>                
+            </tr>-->            
+        </tbody>        
+    </table> 
+
+    <div class="dash-paging">
+        <button id="vid-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">first_page</i>
+          </button>
+          <span class="mdl-tooltip" for="vid-page-first">Retornar à primeira página</span>
+          
+          <button id="vid-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_left</i>
+          </button>
+          <span class="mdl-tooltip" for="vid-page-prev">Retornar à página anterior</span>
+          <form id="vid-page-form" class="page-number" action="">
+            <input type="number" id="vid-page-no" min="1" value="1">
+          </form>
+          <span>de <b class="vid-page-total">40</b></span>
+          
+          <button id="vid-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">chevron_right</i>
+          </button>
+          <span class="mdl-tooltip" for="vid-page-next">Ir à página seguinte</span>
+          
+          <button id="vid-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">last_page</i>
+          </button>
+          <span class="mdl-tooltip" for="vid-page-last">Ir à última página</span>
+    </div>
+    
+</div>
+
+<%- include('includes/endmain') -%>
+
+<!-- EXTRA CONTENT OUTSIDE BLOCK-->
+
+<%- include('includes/footer') -%>
+<script src="/js/ImagePreview.js"></script>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/dash_design.js"></script>

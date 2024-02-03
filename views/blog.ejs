@@ -1,0 +1,117 @@
+<%- include('includes/header') -%>
+        <div class="mdl-cell mdl-cell--12-col blog-header">            
+            <% if(typeof header !== "undefined"){ %>
+              <h5>: : Blog : .</h5>        
+              <h3><%= header %> .</h3>          
+              <% } else { %>
+                <h1>: : Blog .</h1>
+              <% } %>                    
+        </div>
+
+        <!-- PAGE NUMBERING COLUMN -->
+        <div class="pages-container mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div id="top-paging" class="pages">
+            <!--<a href="blog.htm"><i class="material-icons">first_page</i></a>-->
+            <button id="page-first-top" class="page-first mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">first_page</i>
+            </button>
+            <span class="mdl-tooltip" for="page-first-top">Retornar à primeira página</span>
+            <!--<i class="material-icons">chevron_left</i>-->
+            <button id="page-previous-top" class="page-previous mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">chevron_left</i>
+            </button>
+            <span class="mdl-tooltip" for="page-previous-top">Retornar à página anterior</span>
+            <form class="page-number">
+              <input type="number" id="page-input-top" class="page-input" name="page-input-top" min="1" value="1">              
+            </form>
+            <span>de <b class="page-total">40</b></span>
+            <!--<i class="material-icons">chevron_right</i>-->
+            <button id="page-next-top" class="page-next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">chevron_right</i>
+            </button>
+            <span class="mdl-tooltip" for="page-next-top">Ir à página seguinte</span>
+            <!--<i class="material-icons">last_page</i>-->
+            <button id="page-last-top" class="page-last mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">last_page</i>
+            </button>
+            <span class="mdl-tooltip" for="page-last-top">Ir à última página</span>
+          </div>
+        </div>
+
+
+        <!--ARTICLES COLUMN-->
+        <div class="mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet mdl-cell--4-col-phone articles-column">          
+          <div class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+        </div>
+
+        <!--CATEGORIES COLUMN-->
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--4-col-phone categories-column">
+
+          <h4>Histórico</h4>
+          <div id="posting-history">
+            <div class="posting-year posting-exp">2021<img src="/images/exp.png" class="posting-img"></div>
+            <div class="posting-year-group">
+              <div class="posting-month posting-not-exp">Dezembro<img src="/images/exp.png" class="posting-img"></div>
+              <div class="posting-month-group">
+                <a href="#" class="history-element">Um post de exemplo</a>
+                <hr>
+                <a href="#" class="history-element">Um segundo post de exemplo</a>
+                <hr>
+                <a href="#" class="history-element">Um terceiro post de exemplo</a>
+              </div>
+            </div>
+                        
+            
+            <h6>2020</h6>
+            <h6>2019</h6>            
+          </div>          
+
+          <h4>Categorias</h4>
+          <div id="blog-categories"></div>          
+          
+
+        </div>
+
+        <!-- PAGE NUMBERING COLUMN -->
+        <div class="pages-container mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <div id="bottom-paging" class="pages">
+            <!--<a href="blog.htm"><i class="material-icons">first_page</i></a>-->
+            <button id="page-first-bottom" class="page-first mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">first_page</i>
+            </button>
+            <span class="mdl-tooltip" for="page-first-bottom">Retornar à primeira página</span>
+            <!--<i class="material-icons">chevron_left</i>-->
+            <button id="page-previous-bottom" class="page-previous mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">chevron_left</i>
+            </button>
+            <span class="mdl-tooltip" for="page-previous-bottom">Retornar à página anterior</span>
+            <form class="page-number">
+              <input type="number" id="page-input-bottom" name="page-input-bottom" class="page-input" min="1" value="1">              
+            </form>
+            <span>de <b class="page-total">40</b></span>
+            <!--<i class="material-icons">chevron_right</i>-->
+            <button id="page-next-bottom" class="page-next mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">chevron_right</i>
+            </button>
+            <span class="mdl-tooltip" for="page-next-bottom">Ir à página seguinte</span>
+            <!--<i class="material-icons">last_page</i>-->
+            <button id="page-last-bottom" class="page-last mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              <i class="material-icons">last_page</i>
+            </button>
+            <span class="mdl-tooltip" for="page-last-bottom">Ir à última página</span>
+          </div>
+        </div>
+
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/editorController.js" type="module"></script>
+<script src="/js/highlight/highlight.min.js"></script>
+<script src="/js/highlight/high.js"></script>
+<script src="/js/blogController.js" type="module"></script>
+<% if(typeof header === "undefined"){ %>
+<script src="/js/blog.js" type="module"></script>
+<% }else{ %>
+<script src="/js/category.js" type="module"></script>
+<% } %>

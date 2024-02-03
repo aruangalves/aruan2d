@@ -1,0 +1,30 @@
+<%- include('includes/header') -%>
+
+<div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+<div class="dev-project ">
+  <div class="dev-project-header" style="background-image: url(/upload/images/about.jpg);"></div>
+  <div class="article-header-decoration">
+    <div class="article-header-dleft"></div>
+    <div class="article-header-dright"></div>
+  </div>
+  <div class="about-header-container">
+    <div class="about-photo-container">
+      <img class="about-img" src="<%= body.doc.img %>">
+    </div>
+    <div class="about-text">
+      <h2>: : Sobre : .</h2>
+    </div>          
+  </div>
+  <div class="dev-project-body" id="about-content" data-row="<%= JSON.stringify(body.doc.data) %>">           
+  </div>          
+  
+</div>
+</div>
+
+
+<%- include('includes/modals') -%>
+<%- include('includes/footer') -%>
+<script src="/js/highlight/highlight.min.js"></script>
+<script src="/js/highlight/high.js"></script>
+<script src="/js/front.js"></script>
+<script src="/js/about.js" type="module"></script>

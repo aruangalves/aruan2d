@@ -1,0 +1,38 @@
+<body>
+    <div class="dash-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="dash-header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout__title"><img src="/images/letter2.png" class="logo">Aruan2D Dashboard : : <%= title %></span>
+            </div>
+        </header>
+        <div class="dash-drawer mdl-layout__drawer">
+            <header class="dash-drawer-header">
+                <img src="<%= avatar %>" class="dash-avatar">
+                <div class="dash-avatar-dropdown">
+                    <span><%= email %></span>
+                    <div class="mdl-layout-spacer"></div>
+                    <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">arrow_drop_down</i>
+                        <span class="visuallyhidden">Actions</span>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                        <li id="dash-changeprofile" class="mdl-menu__item"><i class="material-icons">manage_accounts</i><span class="mdl-menu__item-text">Editar perfil</span></li>
+                        <li id="dash-changepassword" class="mdl-menu__item"><i class="material-icons">lock</i><span class="mdl-menu__item-text">Alterar senha</span></li>
+                        <a class="dash-profile-a" href="/dashbrd/logout"><li class="mdl-menu__item"><i class="material-icons">logout</i><span class="mdl-menu__item-text">Fazer logout</span></li></a>
+                    </ul>
+                </div>
+            </header>
+            <nav class="dash-navigation mdl-navigation">
+                <a class="mdl-navigation__link" href="/dashbrd"><i class="material-icons" role="presentation">home</i>Home</a>
+                <a class="mdl-navigation__link" href="/dashbrd/blog"><i class="material-icons" role="presentation">speaker_notes</i>Blog</a>
+                <a class="mdl-navigation__link" href="/dashbrd/dev"><i class="material-icons" role="presentation">terminal</i>Dev</a>
+                <a class="mdl-navigation__link" href="/dashbrd/design"><i class="material-icons" role="presentation">design_services</i>Design</a>
+                <a class="mdl-navigation__link" href="/dashbrd/learn"><i class="material-icons" role="presentation">school</i>Ensino</a>
+                <a class="mdl-navigation__link" href="/dashbrd/about"><i class="material-icons" role="presentation">info</i>Sobre</a>
+                <div class="mdl-layout-spacer"></div>
+                <span class="mdl-navigation-text">Aruan2D</span>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content mdl-color--grey-100">
+            <div class="mdl-grid dash-content">

@@ -1,0 +1,103 @@
+<%- include('includes/header') -%>
+<%- include('includes/navigation') -%>
+
+
+
+<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-shadow--2dp dash-index-cell" style="text-align: center;">
+    <h5 style="background-color: var(--botgray); color: var(--white); padding: 1rem 1rem; margin: 2rem -1rem 0;"><i class="material-icons" style="vertical-align: -0.3rem;">query_stats</i> Até o momento, o site contabiliza um total de: </h5>                                          
+    <div class="dash-stats-grid">
+        <h5 id="dash-stat-blog">Blog</h5>
+        <h5 id="dash-stat-dev">Dev</h5>     
+        <h5 id="dash-stat-dsn">Design</h5>
+        <h5 id="dash-stat-arm">Armazenamento</h5>   
+
+        <div id="dash-sq-blog" class="dash-stats-igrid mdl-shadow--2dp mdl-color-text--grey-50" style="background-color: var(--darkred);">      
+            <h2><span id="total-posts"></span><i class="material-icons dash-minor-icon">newspaper</i></h2>
+            <h6>posts em</h6>
+            <h6><span id="total-bcategories"></span> categorias</h6>
+        </div>
+        <div id="dash-sq-dev" class="dash-stats-igrid mdl-shadow--2dp mdl-color--cyan-900 mdl-color-text--grey-50">
+            <h2><span id="total-projects"></span><i class="material-icons dash-minor-icon">save</i></h2>
+            <h6>projetos em</h6>
+            <h6><span id="total-dcategories"></span>  categorias</h6>
+        </div>
+
+        
+        
+        <div id="dash-sq-dsn" class="dash-stats-igrid mdl-shadow--2dp mdl-color-text--grey-50" style="background-color: var(--yellow);">                                
+            <h2><span id="total-design"></span><i class="material-icons dash-minor-icon">palette</i></h2>
+            <h6>itens publicados</h6>
+        </div>
+                               
+        <div id="dash-sq-arm" class="dash-stats-igrid mdl-color--blue-grey-800 mdl-color-text--grey-50 mdl-shadow--2dp">                                
+            <h4 id="upload-size"></h4>
+            <h6>em uploads <i class="material-icons" style="vertical-align: -0.3rem;">cloud_done</i></h6>
+        </div>
+    </div>                        
+</div>
+
+<div class="mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet dash-index-cell">
+    <h3 style="background-color: var(--botgray); color: var(--white); padding: 1rem 1rem; margin: 2rem -1rem;"><i class="material-icons" style="font-size: 28pt; vertical-align: -0.5rem;">leaderboard</i>Estatísticas do site</h3>
+    <canvas id="dash-barchart" class="dash-chart"></canvas>                            
+</div>
+
+<div class="mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet dash-index-cell">
+    <h3 style="background-color: var(--botgray); color: var(--white); padding: 1rem 1rem; margin: 2rem -1rem;"><i class="material-icons" style="font-size: 28pt; vertical-align: -0.5rem;">design_services</i>Itens de design</h3>    
+    <canvas id="dash-piechart" class="dash-chart"></canvas>                        
+</div>
+
+
+
+
+<div id="dash-security" class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-grid mdl-color-text--grey-800  dash-index-cell">
+    <h2 style="color: var(--red); font-weight: 400; width: 100%;"><i class="material-icons dash-index-icon">policy</i> Segurança</h2> 
+    <p>Acompanhe todas as tentativas mais recentes de login, alteração de senha e modificação de endereço de e-mail aqui.</p>
+    <br><br>   
+    <table class="dash-table" id="security-table">
+        <thead class="dash-thead dash-thead-textfirst">
+            <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>E-mail</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="dash-tbody dash-tbody-textfirst">   
+        </tbody>
+    </table> 
+    <div class="dash-actions">
+        <div></div>
+        <div class="dash-paging">
+            <button id="sec-page-first" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">first_page</i>
+            </button>
+            <span class="mdl-tooltip" for="sec-page-first">Retornar à primeira página</span>
+            
+            <button id="sec-page-prev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">chevron_left</i>
+            </button>
+            <span class="mdl-tooltip" for="sec-page-prev">Retornar à página anterior</span>
+            <form id="sec-page-form" class="page-number" action="">
+            <input type="number" id="sec-page-no" name="sec-page-no" min="1" value="1">
+            </form>
+            <span>de <b id="sec-page-total" class="sec-page-total">40</b></span>
+            
+            <button id="sec-page-next" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">chevron_right</i>
+            </button>
+            <span class="mdl-tooltip" for="sec-page-next">Ir à página seguinte</span>
+            
+            <button id="sec-page-last" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <i class="material-icons">last_page</i>
+            </button>
+            <span class="mdl-tooltip" for="sec-page-last">Ir à última página</span>
+        </div>
+    </div>                       
+</div>
+                    
+
+<%- include('includes/endmain') -%>
+<%- include('includes/footer') -%>
+<script src="/js/chart.min.js"></script>
+<script src="/js/PrettyDate.js"></script>
+<script src="/js/dash_index.js"></script>
