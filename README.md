@@ -1,6 +1,6 @@
 # Aruan2D
 
-The code I've developed to create my professional website available at [aruan.dev](https://aruan.dev). The backend was made in node.js expecting a MongoDB database through the official driver. The frontend pages are available in EJS with all of the scripting done in pure JavaScript, the page look and feel was achieved through the help of [Material Design Lite](https://getmdl.io/index.html).
+The code I've developed to create my professional website available at [aruan.dev](https://aruan.dev). The backend was made in node.js expecting a MongoDB database through the official driver. The frontend pages are available in EJS with all of the scripting done in raw JavaScript, the page look and feel was achieved through the help of [Material Design Lite](https://getmdl.io/index.html).
 
 More info (written in portuguese) is available at the [project page](https://aruan.dev/dev/project/aruan2d) on my website.
 
