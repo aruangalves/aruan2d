@@ -6,8 +6,8 @@ More info (written in portuguese) is available at the [project page](https://aru
 
 ## Resources
 * The homepage automatically retrieves the most recent blog posts and projects posted on the site;
-| ![Homepage](/screenshots/001.jpg) | ![Blog section on homepage displaying the latest blog posts](/screenshots/002.jpg) |
-| ![Dev section on homepage, displaying the most recent projects](/screenshots/003.jpg) | ![Design section on homepage](/screenshots/004.jpg)
+![Homepage](/screenshots/001.jpg)
+<img src="/screenshots/002.jpg" width="30%"></img> <img src="/screenshots/003.jpg" width="30%"></img> <img src="/screenshots/004.jpg" width="30%"></img> 
 
 
 
