@@ -6,10 +6,11 @@ More info (written in portuguese) is available at the [project page](https://aru
 
 ## Resources
 * The homepage automatically retrieves the most recent blog posts and projects posted on the site;
-![Homepage](/screenshots/001.jpg)
-![Blog section on homepage displaying the latest blog posts](/screenshots/002.jpg)
-![Dev section on homepage, displaying the most recent projects](/screenshots/003.jpg)
-![Design section on homepage](/screenshots/004.jpg)
+| ![Homepage](/screenshots/001.jpg) | ![Blog section on homepage displaying the latest blog posts](/screenshots/002.jpg) |
+| ![Dev section on homepage, displaying the most recent projects](/screenshots/003.jpg) | ![Design section on homepage](/screenshots/004.jpg)
+
+
+
 
 * A blog page, with posts sorted by categories and date. These categories are listed on the individual post footer and on the sidebar of the main blog page. The sidebar also features a history where posts are arranged by year and each individual month;
 ![Blog section](/screenshots/005.jpg)
